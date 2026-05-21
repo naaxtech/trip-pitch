@@ -543,6 +543,170 @@
 
     .full-divider { border: none; border-top: 1px solid var(--border); }
 
+    /* ── MARKETING SECTION ── */
+    .mkt-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.75rem; }
+    .mkt-tab {
+      font-size: 13px; font-weight: 500;
+      padding: 7px 16px; border-radius: 24px;
+      cursor: pointer; border: 1px solid var(--border);
+      background: var(--card); color: var(--muted);
+      transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+    }
+    .mkt-tab:hover { border-color: var(--border-med); color: var(--text); }
+    .mkt-tab.active { background: var(--terra); color: #fff; border-color: transparent; }
+
+    .mkt-panel { display: none; animation: fadeIn 0.25s ease; }
+    .mkt-panel.active { display: block; }
+
+    .mkt-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .mkt-header {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 1.75rem; padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mkt-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      background: var(--terra-l);
+    }
+    .mkt-icon svg { stroke: var(--terra); }
+
+    .mkt-header h3 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+    .mkt-header p  { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    .mkt-concepts { display: flex; flex-direction: column; gap: 12px; }
+
+    .mkt-concept {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .mkt-concept:hover { border-color: var(--terra); }
+    .mkt-concept.open { border-color: var(--terra); background: var(--card); }
+
+    .mkt-concept-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .mkt-concept-left { display: flex; align-items: center; gap: 10px; }
+    .mkt-concept-left svg { stroke: var(--terra); flex-shrink: 0; }
+    .mkt-concept-name { font-size: 13px; font-weight: 500; color: var(--text); }
+    .mkt-concept-tag {
+      font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px;
+      background: var(--terra-l); color: var(--terra);
+      flex-shrink: 0;
+    }
+
+    .mkt-concept-body {
+      display: none; margin-top: 12px; padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .mkt-concept.open .mkt-concept-body { display: block; }
+
+    .mkt-concept-desc {
+      font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 10px;
+    }
+
+    .mkt-how {
+      background: var(--terra-l);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--terra-d);
+      line-height: 1.6;
+    }
+    .mkt-how strong { font-weight: 600; }
+
+    /* ── SYSTEMS DIAGRAM ── */
+    .systems-toggle {
+      display: flex; gap: 6px; margin-bottom: 2rem;
+    }
+    .sys-toggle-btn {
+      font-size: 13px; font-weight: 500;
+      padding: 7px 18px; border-radius: 24px;
+      cursor: pointer; border: 1px solid var(--border);
+      background: var(--card); color: var(--muted);
+      transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+    }
+    .sys-toggle-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
+
+    .systems-view { display: none; animation: fadeIn 0.25s ease; }
+    .systems-view.active { display: block; }
+
+    .sys-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--light); margin-bottom: 1rem;
+    }
+
+    .sys-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .sys-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .sys-card:hover { border-color: var(--border-med); transform: translateY(-2px); }
+    .sys-card.internal-card:hover { border-color: var(--ocean); }
+    .sys-card.external-card:hover { border-color: var(--terra); }
+
+    .sys-mockup {
+      height: 110px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+      position: relative;
+    }
+
+    .sys-mockup svg {
+      width: 100%; height: 100%;
+    }
+
+    .sys-info {
+      padding: 12px 14px;
+    }
+    .sys-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px;
+    }
+    .sys-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+    .sys-badge {
+      display: inline-block; font-size: 9px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 2px 7px; border-radius: 20px; margin-bottom: 6px;
+    }
+    .sys-badge.internal { background: var(--ocean-l); color: var(--ocean); }
+    .sys-badge.external { background: var(--terra-l); color: var(--terra); }
+    .sys-badge.restricted { background: var(--violet-l); color: var(--violet); }
+
+    .access-note {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; color: var(--muted);
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 12px; margin-bottom: 1.5rem;
+    }
+    .access-note svg { stroke: var(--muted); flex-shrink: 0; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       nav { padding: 0 1rem; }
@@ -562,6 +726,8 @@
     <div class="nav-brand">NAAX<span>TECH</span></div>
     <div class="nav-tabs">
       <button class="nav-tab" onclick="navScrollTo('#layers')">The Platform</button>
+      <button class="nav-tab" onclick="navScrollTo('#marketing')">Marketing</button>
+      <button class="nav-tab" onclick="navScrollTo('#systems')">Systems</button>
       <button class="nav-tab" onclick="navScrollTo('#journey')">User Journey</button>
       <button class="nav-tab" onclick="navScrollTo('#cta')">Work Together</button>
     </div>
@@ -759,6 +925,118 @@
           <strong>Think of it like film distribution.</strong> Traditional cloud is owning a cinema — you control everything, but you build and manage it all. Edge hosting is streaming on a global platform — it just works, reaches everyone instantly, and the infrastructure is invisible to you. <strong>For a trip platform at launch, edge is the right call.</strong> As you pass 100K users, the strategy shifts and a hybrid approach starts making sense. Knowing when to make that call — that's the job.
         </div>
       </div>
+    </div>
+  </div>
+
+  <hr class="full-divider" />
+
+  <!-- MARKETING SECTION -->
+  <div class="section" id="marketing">
+    <div class="section-header">
+      <div class="section-kicker">Marketing strategy</div>
+      <h2 class="section-title">Visibility without strategy is just noise.</h2>
+      <p class="section-desc">Technology builds the engine. Marketing makes people want to get in. These are the principles and tools Marketing uses to turn a great product into a profitable, growing business.</p>
+    </div>
+
+    <div class="mkt-tabs">
+      <button class="mkt-tab active" onclick="switchMkt('psychology', this)">Psychology</button>
+      <button class="mkt-tab" onclick="switchMkt('visibility', this)">Visibility</button>
+      <button class="mkt-tab" onclick="switchMkt('retention', this)">Retention</button>
+      <button class="mkt-tab" onclick="switchMkt('profit', this)">Profit & Conversion</button>
+    </div>
+
+    <div class="mkt-panel active" id="mkt-psychology">
+      <div class="mkt-card">
+        <div class="mkt-header">
+          <div class="mkt-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+          </div>
+          <div>
+            <h3>The psychology of booking</h3>
+            <p>People don't buy experiences rationally. They buy based on emotion, trust, and the feeling that they're getting something scarce or special. These are the principles behind every design and messaging decision.</p>
+          </div>
+        </div>
+        <div class="mkt-concepts" id="mkt-concepts-psychology"></div>
+      </div>
+    </div>
+
+    <div class="mkt-panel" id="mkt-visibility">
+      <div class="mkt-card">
+        <div class="mkt-header">
+          <div class="mkt-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <h3>Getting found in worldwide noise</h3>
+            <p>Millions of travel platforms exist. Getting in front of the right person at the right moment — before a competitor does — requires a multi-channel strategy built on data, not guesswork.</p>
+          </div>
+        </div>
+        <div class="mkt-concepts" id="mkt-concepts-visibility"></div>
+      </div>
+    </div>
+
+    <div class="mkt-panel" id="mkt-retention">
+      <div class="mkt-card">
+        <div class="mkt-header">
+          <div class="mkt-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+          </div>
+          <div>
+            <h3>Keeping people coming back</h3>
+            <p>Acquiring a new customer costs 5–7x more than retaining one. A trip platform that books the same traveller three times is three times more profitable than one that keeps starting from scratch.</p>
+          </div>
+        </div>
+        <div class="mkt-concepts" id="mkt-concepts-retention"></div>
+      </div>
+    </div>
+
+    <div class="mkt-panel" id="mkt-profit">
+      <div class="mkt-card">
+        <div class="mkt-header">
+          <div class="mkt-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div>
+            <h3>Turning attention into revenue</h3>
+            <p>Traffic without conversion is just a vanity metric. These are the strategies that turn platform visitors into paying customers — and paying customers into higher-value ones.</p>
+          </div>
+        </div>
+        <div class="mkt-concepts" id="mkt-concepts-profit"></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="full-divider" />
+
+  <!-- SYSTEMS DIAGRAM SECTION -->
+  <div class="section" id="systems">
+    <div class="section-header">
+      <div class="section-kicker">The systems</div>
+      <h2 class="section-title">What gets built — and who sees it.</h2>
+      <p class="section-desc">Every system Naaxtech builds falls into one of two categories: internal tools that run the business, or external products that users and operators interact with directly.</p>
+    </div>
+
+    <div class="systems-toggle">
+      <button class="sys-toggle-btn active" onclick="switchSys('internal', this)">Internal systems</button>
+      <button class="sys-toggle-btn" onclick="switchSys('external', this)">External products</button>
+    </div>
+
+    <!-- INTERNAL -->
+    <div class="systems-view active" id="sys-internal">
+      <div class="access-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Internal systems are not visible to customers. Access is role-based — Frederica, her team, and operators each see only what's relevant to them.
+      </div>
+      <div class="sys-grid" id="sys-grid-internal"></div>
+    </div>
+
+    <!-- EXTERNAL -->
+    <div class="systems-view" id="sys-external">
+      <div class="access-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        External products are public-facing — what travellers and operators experience directly. These are the face of the brand.
+      </div>
+      <div class="sys-grid" id="sys-grid-external"></div>
     </div>
   </div>
 
@@ -982,10 +1260,400 @@
       if (!isOpen) el.classList.add('open');
     }
 
-    // build all three on init so switching tabs is instant
+    // ── MARKETING ──
+    function switchMkt(key, el) {
+      document.querySelectorAll('.mkt-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      document.querySelectorAll('.mkt-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('mkt-' + key).classList.add('active');
+      buildMktConcepts(key);
+    }
+
+    const mktIconSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`;
+    const mktArrow = `<svg class="chip-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`;
+
+    const mktData = {
+      psychology: [
+        { name: 'Social proof', tag: 'Trust', desc: 'People follow the behaviour of others when uncertain. Showing "142 people booked this week" or "⭐ 4.9 from 380 travellers" reduces decision anxiety. The brain interprets popularity as a signal of quality — even before reading a single review.', how: 'Tech builds: real-time booking counters, verified review display, "most popular" badges on listings driven by actual booking data.' },
+        { name: 'Scarcity & urgency', tag: 'Conversion', desc: 'When supply feels limited, perceived value rises. "Only 3 spots left" or "Offer ends tonight" triggers loss aversion — the fear of missing out is a stronger motivator than the desire to gain. Used ethically, this is based on real availability data, not fabricated pressure.', how: 'Tech builds: live availability tracking per tour, automated scarcity labels when remaining spots fall below a threshold, countdown timers on limited offers.' },
+        { name: 'Anchoring', tag: 'Pricing', desc: 'The first price a person sees becomes the reference point for everything after. Showing a crossed-out higher price next to a current price makes the current price feel like a deal — even if it never changed. Premium listings shown first make mid-tier options look like value.', how: 'Tech builds: original price display logic, premium-first ranking in search results, tiered pricing display on listing pages.' },
+        { name: 'The paradox of choice', tag: 'UX', desc: 'More options cause paralysis, not satisfaction. When travellers see 200 undifferentiated tours, they leave. Curated collections, editorial picks, and personalised recommendations reduce cognitive load and guide faster decisions.', how: 'Tech builds: personalised recommendation engine based on browsing history, curated collections per destination, smart defaults that pre-filter by traveller type.' },
+        { name: 'Reciprocity', tag: 'Loyalty', desc: 'People feel compelled to return value when they receive something for free. A free travel guide, a first-booking discount, or a surprise post-trip credit creates psychological debt that translates into repeat bookings.', how: 'Tech builds: automated post-trip credit issuance, free content gating tied to email capture, welcome discount codes in onboarding sequences.' },
+        { name: 'Identity & aspiration', tag: 'Messaging', desc: 'People don\'t buy products — they buy versions of themselves. A traveller booking a kayaking tour in Calabria is buying the identity of someone adventurous and culturally curious. Messaging that mirrors this aspiration converts better than feature lists.', how: 'Marketing builds: copy strategy, imagery selection, tone of voice guidelines, and persona-matched content across all channels.' },
+      ],
+      visibility: [
+        { name: 'Search intent targeting (SEO)', tag: 'Organic', desc: 'Travellers search with high purchase intent — "boat tour Calabria", "things to do Tropea". Ranking for these terms means being present at the exact moment someone has decided to book. Organic traffic has zero cost per click and compounds over time.', how: 'Tech builds: destination and activity pages optimised for long-tail search queries, structured data for rich search results, fast load times for Core Web Vitals.' },
+        { name: 'Content as distribution', tag: 'Organic', desc: 'A blog post titled "The 10 most underrated beaches in Calabria" can rank on Google, be shared on Pinterest, and be referenced by travel journalists — all driving traffic to the booking platform without paid spend. Content that answers real traveller questions builds domain authority.', how: 'Marketing builds: editorial calendar, content strategy. Tech builds: CMS, internal linking architecture, automatic content-to-listing connections.' },
+        { name: 'Paid social (Meta & TikTok)', tag: 'Paid', desc: 'Highly visual travel content performs extremely well on Instagram and TikTok. Short-form video of Calabrian coastlines, street food, and local experiences can reach millions of targeted users at low CPM. The platform retargets website visitors with booking-specific ads.', how: 'Marketing builds: creative strategy, audience building, campaign optimisation. Tech builds: Meta Pixel integration, retargeting audiences, conversion tracking.' },
+        { name: 'Influencer & creator partnerships', tag: 'Earned', desc: 'Travel creators with niche, highly engaged audiences (10k–200k followers) convert better than mass celebrities. A food and travel creator documenting a Calabrian experience reaches exactly the right audience with authentic content that doesn\'t feel like advertising.', how: 'Marketing builds: creator selection, brief creation, campaign tracking. Tech builds: affiliate tracking links, unique booking codes per creator, attribution dashboard.' },
+        { name: 'Email as owned audience', tag: 'Owned', desc: 'Social media platforms can change their algorithm overnight. An email list is an owned asset that can\'t be taken away. Every person who gives their email becomes a direct marketing channel — for re-engagement, seasonal promotions, and personalised recommendations.', how: 'Tech builds: email capture flows, segmentation by booking history and destination interest, automated sequences. Marketing builds: content strategy and campaign copy.' },
+        { name: 'Destination PR & travel media', tag: 'Earned', desc: 'Travel journalists, guidebook authors, and tourism boards are always looking for new angles on underexplored regions. Being featured in a single major travel publication (Condé Nast, Lonely Planet, NYT Travel) can drive a sustained surge in brand awareness.', how: 'Marketing builds: PR outreach, media relationships, press materials. Tech builds: press room page, media asset library, tracking links for PR-attributed traffic.' },
+      ],
+      retention: [
+        { name: 'Post-trip nurture sequences', tag: 'Email', desc: 'The moment after a great experience is the highest-intent window to build loyalty. A well-timed email asking "how was your tour?" followed by a review request, then a "travellers who visited Calabria also loved..." recommendation sequence keeps the brand top of mind.', how: 'Tech builds: post-booking state machine, automated email triggers by trip completion date. Marketing builds: email copy, recommendation logic, sequence timing.' },
+        { name: 'Personalised recommendations', tag: 'Product', desc: 'Someone who booked a sailing tour probably wants to know about a snorkelling tour next time, not a cooking class. Showing recommendations based on past behaviour — not just what\'s popular — makes every return visit feel like the platform knows them.', how: 'Tech builds: recommendation engine using booking history and browsing data, personalised homepage for logged-in users, "because you loved X" email blocks.' },
+        { name: 'Loyalty & credit system', tag: 'Incentive', desc: 'Earning credits or status through bookings creates a sunk-cost dynamic — users are less likely to switch to a competitor when they have accumulated value on the platform. Tiers (Explorer, Adventurer, Local) add identity and status to the retention mechanism.', how: 'Tech builds: credit ledger, tier calculation engine, credit expiry logic, tier-based feature unlocks. Marketing builds: tier names, benefits, communication.' },
+        { name: 'Community & belonging', tag: 'Community', desc: 'Travellers who feel part of a community — a Calabria lovers group, a curated newsletter, a members-only event — are retained through identity, not just incentives. Community turns customers into advocates who bring others in organically.', how: 'Marketing builds: community spaces, editorial voice, events. Tech builds: user profiles, community features, referral tracking.' },
+        { name: 'Reactivation campaigns', tag: 'Email', desc: 'Users who haven\'t booked in 6+ months are not lost — they\'re dormant. A targeted "we miss you" campaign with a time-limited incentive reactivates a meaningful percentage. Dormant users already trust the platform; they just need a reason to return.', how: 'Tech builds: dormancy detection, automated reactivation triggers. Marketing builds: offer strategy, copy, and A/B test variations.' },
+      ],
+      profit: [
+        { name: 'Pricing psychology', tag: 'Revenue', desc: '€29 converts better than €30. Bundled pricing ("Tour + dinner: €89" vs. €55 + €40 separately) increases average order value while feeling like savings. Premium pricing on small-group or private experiences extracts higher margin from lower volume.', how: 'Marketing builds: pricing tiers, bundle structures, display logic. Tech builds: dynamic pricing display, bundle creation tools, A/B price testing framework.' },
+        { name: 'Upselling & cross-selling', tag: 'Revenue', desc: 'At checkout: "Add a private transfer for €15." After booking: "Travellers who booked this also booked a wine tasting." These prompts, shown at the right moment, increase revenue per booking by 15–40% without acquiring a new customer.', how: 'Tech builds: upsell prompt logic at checkout, post-booking recommendation API. Marketing builds: offer selection, copy, and placement testing.' },
+        { name: 'Conversion rate optimisation (CRO)', tag: 'Conversion', desc: 'Moving the booking completion rate from 3% to 4% on 10,000 monthly visitors means 100 additional bookings — without spending more on ads. CRO is systematic A/B testing of every element in the booking flow: headlines, button copy, pricing display, image order.', how: 'Tech builds: A/B testing infrastructure, event tracking, statistical significance calculator. Marketing builds: test hypotheses, interprets results, implements winning variants.' },
+        { name: 'Commission & take-rate strategy', tag: 'Business model', desc: 'The platform earns a commission on each booking. Setting the right take rate — high enough to be profitable, low enough that operators don\'t list elsewhere first — requires understanding operator economics and competitive positioning. Dynamic commission tiers (lower for high-volume operators) drive operator loyalty.', how: 'Marketing builds: commission model, operator incentive structure. Tech builds: automated payout calculations, tier tracking, commission reporting dashboard.' },
+        { name: 'Seasonal & demand-based pricing', tag: 'Revenue', desc: 'Calabria peaks in July–August and drops sharply in November–February. Dynamic pricing tools allow operators to charge more at peak demand and fill slow periods with promotional pricing. The platform coordinates this across all operators for maximum yield.', how: 'Tech builds: seasonal pricing engine, demand signal dashboards. Marketing builds: promotional calendar, off-season campaign strategy.' },
+        { name: 'Data-driven channel investment', tag: 'Attribution', desc: 'Not all marketing channels are equal. Knowing that Instagram ads bring browsers but SEO brings bookers — and that a travel blog mention converted 47 bookings last month — means every euro of marketing spend goes where it actually generates revenue.', how: 'Tech builds: multi-touch attribution model, channel revenue dashboards. Marketing reads the data and reallocates budget accordingly each month.' },
+      ],
+    };
+
+    function buildMktConcepts(key) {
+      const container = document.getElementById('mkt-concepts-' + key);
+      if (!container || container.dataset.built) return;
+      container.dataset.built = '1';
+      container.innerHTML = mktData[key].map(c => `
+        <div class="mkt-concept" onclick="toggleMktConcept(this)">
+          <div class="mkt-concept-top">
+            <div class="mkt-concept-left">
+              ${mktIconSVG}
+              <span class="mkt-concept-name">${c.name}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span class="mkt-concept-tag">${c.tag}</span>
+              ${mktArrow}
+            </div>
+          </div>
+          <div class="mkt-concept-body">
+            <div class="mkt-concept-desc">${c.desc}</div>
+            <div class="mkt-how"><strong>How this gets built →</strong> ${c.how}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleMktConcept(el) {
+      const was = el.classList.contains('open');
+      el.closest('.mkt-concepts').querySelectorAll('.mkt-concept.open').forEach(c => c.classList.remove('open'));
+      if (!was) el.classList.add('open');
+    }
+
+    // build first tab on load
+    buildMktConcepts('psychology');
+
+    // build all chip panels on init
     buildChips('product');
     buildChips('engine');
     buildChips('growth');
+
+    // ── SYSTEMS DIAGRAM ──
+    function switchSys(key, el) {
+      document.querySelectorAll('.sys-toggle-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      document.querySelectorAll('.systems-view').forEach(v => v.classList.remove('active'));
+      document.getElementById('sys-' + key).classList.add('active');
+    }
+
+    // mini mockup SVGs per system
+    const mockups = {
+      erp: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="110" fill="#F0F0EC"/>
+        <rect x="0" y="0" width="44" height="110" fill="#1A1A1A"/>
+        <rect x="6" y="10" width="32" height="5" rx="2" fill="#333"/>
+        <rect x="6" y="22" width="20" height="3" rx="1.5" fill="#C8614A"/>
+        <rect x="6" y="30" width="28" height="3" rx="1.5" fill="#444"/>
+        <rect x="6" y="38" width="24" height="3" rx="1.5" fill="#444"/>
+        <rect x="6" y="46" width="26" height="3" rx="1.5" fill="#444"/>
+        <rect x="6" y="54" width="22" height="3" rx="1.5" fill="#444"/>
+        <rect x="52" y="8" width="60" height="28" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="58" y="13" width="20" height="3" rx="1.5" fill="#ccc"/>
+        <rect x="58" y="20" width="36" height="8" rx="2" fill="#C8614A" opacity="0.15"/>
+        <text x="76" y="26" font-size="6" fill="#C8614A" font-family="sans-serif" font-weight="600">₱2.4M</text>
+        <rect x="120" y="8" width="72" height="28" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="126" y="13" width="24" height="3" rx="1.5" fill="#ccc"/>
+        <rect x="126" y="20" width="12" height="8" rx="1" fill="#2A6B7C" opacity="0.4"/>
+        <rect x="140" y="22" width="12" height="6" rx="1" fill="#2A6B7C" opacity="0.6"/>
+        <rect x="154" y="19" width="12" height="9" rx="1" fill="#2A6B7C" opacity="0.8"/>
+        <rect x="168" y="17" width="12" height="11" rx="1" fill="#2A6B7C"/>
+        <rect x="52" y="44" width="140" height="18" rx="3" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="58" y="49" width="16" height="2.5" rx="1" fill="#ddd"/>
+        <rect x="100" y="49" width="16" height="2.5" rx="1" fill="#ddd"/>
+        <rect x="142" y="49" width="16" height="2.5" rx="1" fill="#ddd"/>
+        <rect x="58" y="54" width="24" height="3" rx="1.5" fill="#4E6B38" opacity="0.7"/>
+        <rect x="100" y="54" width="18" height="3" rx="1.5" fill="#C8614A" opacity="0.7"/>
+        <rect x="142" y="54" width="22" height="3" rx="1.5" fill="#2A6B7C" opacity="0.7"/>
+        <rect x="52" y="70" width="140" height="32" rx="3" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="58" y="75" width="36" height="2.5" rx="1" fill="#eee"/>
+        <rect x="58" y="81" width="120" height="1.5" rx="1" fill="#f5f5f5"/>
+        <rect x="58" y="85" width="120" height="1.5" rx="1" fill="#f5f5f5"/>
+        <rect x="58" y="89" width="100" height="1.5" rx="1" fill="#f5f5f5"/>
+        <rect x="58" y="93" width="80" height="1.5" rx="1" fill="#f5f5f5"/>
+      </svg>`,
+
+      crm: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="110" fill="#F0F0EC"/>
+        <rect x="0" y="0" width="200" height="22" fill="#2A6B7C"/>
+        <circle cx="12" cy="11" r="5" fill="rgba(255,255,255,0.2)"/>
+        <rect x="22" y="8" width="40" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+        <rect x="130" y="7" width="30" height="7" rx="3" fill="rgba(255,255,255,0.15)"/>
+        <rect x="165" y="7" width="28" height="7" rx="3" fill="#fff" opacity="0.9"/>
+        <rect x="6" y="28" width="56" height="76" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <circle cx="34" cy="42" r="8" fill="#D8EDF2"/>
+        <rect x="14" y="54" width="40" height="3" rx="1.5" fill="#2A6B7C" opacity="0.5"/>
+        <rect x="18" y="60" width="32" height="2" rx="1" fill="#ddd"/>
+        <rect x="14" y="68" width="40" height="1" rx="0.5" fill="#eee"/>
+        <rect x="14" y="72" width="28" height="2" rx="1" fill="#eee"/>
+        <rect x="14" y="77" width="34" height="2" rx="1" fill="#eee"/>
+        <rect x="14" y="82" width="22" height="2" rx="1" fill="#eee"/>
+        <rect x="14" y="87" width="38" height="2" rx="1" fill="#eee"/>
+        <rect x="14" y="92" width="26" height="2" rx="1" fill="#eee"/>
+        <rect x="68" y="28" width="125" height="34" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="74" y="34" width="60" height="3" rx="1.5" fill="#2A6B7C" opacity="0.4"/>
+        <rect x="74" y="40" width="113" height="1.5" rx="1" fill="#f0f0f0"/>
+        <rect x="74" y="44" width="113" height="1.5" rx="1" fill="#f0f0f0"/>
+        <rect x="74" y="48" width="90" height="1.5" rx="1" fill="#f0f0f0"/>
+        <rect x="74" y="52" width="100" height="1.5" rx="1" fill="#f0f0f0"/>
+        <rect x="68" y="68" width="60" height="36" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="74" y="74" width="30" height="2.5" rx="1" fill="#ddd"/>
+        <rect x="74" y="80" width="48" height="6" rx="2" fill="#D8EDF2"/>
+        <rect x="74" y="90" width="48" height="6" rx="2" fill="#f5e4df"/>
+        <rect x="134" y="68" width="59" height="36" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="140" y="74" width="30" height="2.5" rx="1" fill="#ddd"/>
+        <circle cx="147" cy="84" r="5" fill="#D8EDF2"/>
+        <circle cx="158" cy="84" r="5" fill="#DFF0D4"/>
+        <circle cx="169" cy="84" r="5" fill="#F5E4DF"/>
+        <rect x="140" y="93" width="44" height="2.5" rx="1" fill="#eee"/>
+      </svg>`,
+
+      observability: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="110" fill="#0F1117"/>
+        <rect x="6" y="6" width="188" height="14" rx="3" fill="#1a1d27"/>
+        <rect x="10" y="9" width="6" height="6" rx="1" fill="#C8614A" opacity="0.8"/>
+        <rect x="20" y="10" width="30" height="4" rx="2" fill="#333"/>
+        <rect x="56" y="10" width="20" height="4" rx="2" fill="#333"/>
+        <text x="150" y="15" font-size="5" fill="#4E6B38" font-family="monospace">● LIVE</text>
+        <rect x="6" y="26" width="58" height="36" rx="3" fill="#1a1d27"/>
+        <text x="12" y="34" font-size="4.5" fill="#555" font-family="monospace">UPTIME</text>
+        <text x="12" y="44" font-size="11" fill="#4E6B38" font-family="monospace" font-weight="bold">99.9%</text>
+        <rect x="12" y="50" width="44" height="2" rx="1" fill="#333"/>
+        <rect x="12" y="50" width="42" height="2" rx="1" fill="#4E6B38" opacity="0.6"/>
+        <rect x="70" y="26" width="58" height="36" rx="3" fill="#1a1d27"/>
+        <text x="76" y="34" font-size="4.5" fill="#555" font-family="monospace">ERRORS/HR</text>
+        <text x="76" y="44" font-size="11" fill="#C8614A" font-family="monospace" font-weight="bold">3</text>
+        <rect x="76" y="50" width="44" height="2" rx="1" fill="#333"/>
+        <rect x="76" y="50" width="4" height="2" rx="1" fill="#C8614A" opacity="0.8"/>
+        <rect x="134" y="26" width="60" height="36" rx="3" fill="#1a1d27"/>
+        <text x="140" y="34" font-size="4.5" fill="#555" font-family="monospace">API LATENCY</text>
+        <text x="140" y="44" font-size="11" fill="#2A6B7C" font-family="monospace" font-weight="bold">84ms</text>
+        <rect x="140" y="50" width="44" height="2" rx="1" fill="#333"/>
+        <rect x="140" y="50" width="20" height="2" rx="1" fill="#2A6B7C" opacity="0.6"/>
+        <rect x="6" y="68" width="188" height="36" rx="3" fill="#1a1d27"/>
+        <text x="12" y="76" font-size="4" fill="#555" font-family="monospace">SYSTEM LOG</text>
+        <text x="12" y="83" font-size="3.8" fill="#4E6B38" font-family="monospace">✓ booking.create — 201 — 112ms</text>
+        <text x="12" y="89" font-size="3.8" fill="#4E6B38" font-family="monospace">✓ payment.capture — 200 — 340ms</text>
+        <text x="12" y="95" font-size="3.8" fill="#C8614A" font-family="monospace">✗ email.send — 503 — timeout</text>
+        <text x="12" y="101" font-size="3.8" fill="#4E6B38" font-family="monospace">✓ notification.push — 200 — 88ms</text>
+      </svg>`,
+
+      compliance: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="110" fill="#F0F0EC"/>
+        <rect x="6" y="6" width="188" height="12" rx="3" fill="#5248A0"/>
+        <rect x="10" y="9" width="50" height="5" rx="2" fill="rgba(255,255,255,0.3)"/>
+        <rect x="160" y="8" width="28" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
+        <rect x="6" y="24" width="90" height="80" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="12" y="30" width="50" height="4" rx="2" fill="#E7E5F8"/>
+        <rect x="12" y="38" width="78" height="1.5" rx="1" fill="#f0f0f0"/>
+        <rect x="12" y="42" width="60" height="1.5" rx="1" fill="#f0f0f0"/>
+        <rect x="12" y="50" width="78" height="8" rx="2" fill="#E7E5F8"/>
+        <rect x="16" y="53" width="10" height="3" rx="1" fill="#5248A0"/>
+        <rect x="30" y="53" width="24" height="3" rx="1" fill="#ccc"/>
+        <rect x="12" y="62" width="78" height="8" rx="2" fill="#DFF0D4"/>
+        <rect x="16" y="65" width="10" height="3" rx="1" fill="#4E6B38"/>
+        <rect x="30" y="65" width="30" height="3" rx="1" fill="#ccc"/>
+        <rect x="12" y="74" width="78" height="8" rx="2" fill="#F5E4DF"/>
+        <rect x="16" y="77" width="10" height="3" rx="1" fill="#C8614A"/>
+        <rect x="30" y="77" width="20" height="3" rx="1" fill="#ccc"/>
+        <rect x="12" y="86" width="78" height="8" rx="2" fill="#DFF0D4"/>
+        <rect x="16" y="89" width="10" height="3" rx="1" fill="#4E6B38"/>
+        <rect x="30" y="89" width="28" height="3" rx="1" fill="#ccc"/>
+        <rect x="102" y="24" width="92" height="38" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="108" y="30" width="40" height="4" rx="2" fill="#E7E5F8"/>
+        <rect x="162" y="29" width="26" height="6" rx="3" fill="#4E6B38"/>
+        <rect x="108" y="38" width="80" height="1.5" rx="1" fill="#eee"/>
+        <rect x="108" y="42" width="64" height="1.5" rx="1" fill="#eee"/>
+        <rect x="108" y="46" width="72" height="1.5" rx="1" fill="#eee"/>
+        <rect x="108" y="50" width="50" height="1.5" rx="1" fill="#eee"/>
+        <rect x="102" y="68" width="92" height="36" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="108" y="74" width="36" height="4" rx="2" fill="#E7E5F8"/>
+        <circle cx="116" cy="84" r="6" fill="#E7E5F8" stroke="#5248A0" stroke-width="1"/>
+        <text x="113" y="86" font-size="6" fill="#5248A0" font-weight="bold" font-family="sans-serif">✓</text>
+        <circle cx="132" cy="84" r="6" fill="#DFF0D4" stroke="#4E6B38" stroke-width="1"/>
+        <text x="129" y="86" font-size="6" fill="#4E6B38" font-weight="bold" font-family="sans-serif">✓</text>
+        <circle cx="148" cy="84" r="6" fill="#F5E4DF" stroke="#C8614A" stroke-width="1"/>
+        <text x="145.5" y="86" font-size="6" fill="#C8614A" font-weight="bold" font-family="sans-serif">!</text>
+        <circle cx="164" cy="84" r="6" fill="#E7E5F8" stroke="#5248A0" stroke-width="1"/>
+        <text x="161" y="86" font-size="6" fill="#5248A0" font-weight="bold" font-family="sans-serif">✓</text>
+        <rect x="108" y="95" width="80" height="2.5" rx="1" fill="#eee"/>
+      </svg>`,
+
+      engineering: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="110" fill="#0F1117"/>
+        <rect x="0" y="0" width="200" height="18" fill="#161b22"/>
+        <rect x="6" y="6" width="8" height="6" rx="1" fill="#C8614A" opacity="0.7"/>
+        <rect x="16" y="6" width="8" height="6" rx="1" fill="#9A6B1A" opacity="0.7"/>
+        <rect x="26" y="6" width="8" height="6" rx="1" fill="#4E6B38" opacity="0.7"/>
+        <rect x="44" y="7" width="80" height="4" rx="2" fill="#21262d"/>
+        <rect x="6" y="22" width="188" height="82" rx="3" fill="#0d1117"/>
+        <text x="12" y="32" font-size="4.5" fill="#58a6ff" font-family="monospace">const</text>
+        <text x="30" y="32" font-size="4.5" fill="#e6edf3" font-family="monospace">bookTour = async (tourId, userId) =&gt; {"{}"}</text>
+        <text x="12" y="40" font-size="4.5" fill="#e6edf3" font-family="monospace">  const tour = await</text>
+        <text x="72" y="40" font-size="4.5" fill="#79c0ff" font-family="monospace">db.tours.findById(tourId);</text>
+        <text x="12" y="48" font-size="4.5" fill="#ff7b72" font-family="monospace">  if</text>
+        <text x="22" y="48" font-size="4.5" fill="#e6edf3" font-family="monospace">(!tour.available)</text>
+        <text x="78" y="48" font-size="4.5" fill="#ff7b72" font-family="monospace">throw</text>
+        <text x="95" y="48" font-size="4.5" fill="#a5d6ff" font-family="monospace">new Error(</text>
+        <text x="126" y="48" font-size="4.5" fill="#a8d8a8" font-family="monospace">'SOLD_OUT'</text>
+        <text x="12" y="56" font-size="4.5" fill="#e6edf3" font-family="monospace">  const payment = await</text>
+        <text x="78" y="56" font-size="4.5" fill="#79c0ff" font-family="monospace">stripe.charge(userId, tour.price);</text>
+        <text x="12" y="64" font-size="4.5" fill="#e6edf3" font-family="monospace">  await</text>
+        <text x="32" y="64" font-size="4.5" fill="#79c0ff" font-family="monospace">sendConfirmation(userId, tour);</text>
+        <text x="12" y="72" font-size="4.5" fill="#ff7b72" font-family="monospace">  return</text>
+        <text x="34" y="72" font-size="4.5" fill="#e6edf3" font-family="monospace">{ booking, payment };</text>
+        <text x="12" y="80" font-size="4.5" fill="#e6edf3" font-family="monospace">{"}"}</text>
+        <rect x="6" y="88" width="188" height="10" rx="2" fill="#161b22"/>
+        <text x="12" y="95" font-size="4" fill="#4E6B38" font-family="monospace">● main  ✓ 3 passing  ✗ 0 failing</text>
+        <text x="140" y="95" font-size="4" fill="#555" font-family="monospace">coverage: 94%</text>
+      </svg>`,
+
+      audit: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="110" fill="#F0F0EC"/>
+        <rect x="6" y="6" width="188" height="14" rx="3" fill="#1A1A1A"/>
+        <rect x="10" y="9" width="36" height="5" rx="2" fill="#333"/>
+        <rect x="150" y="9" width="38" height="5" rx="2" fill="#333"/>
+        <rect x="6" y="26" width="188" height="78" rx="3" fill="#fff" stroke="#eee" stroke-width="0.5"/>
+        <rect x="12" y="32" width="30" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="60" y="32" width="30" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="110" y="32" width="30" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="160" y="32" width="28" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="12" y="38" width="176" height="0.5" fill="#f0f0f0"/>
+        <rect x="12" y="42" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="60" y="42" width="44" height="2.5" rx="1" fill="#eee"/>
+        <rect x="110" y="42" width="20" height="2.5" rx="1" fill="#DFF0D4"/>
+        <rect x="160" y="42" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="12" y="48" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="60" y="48" width="36" height="2.5" rx="1" fill="#eee"/>
+        <rect x="110" y="48" width="20" height="2.5" rx="1" fill="#DFF0D4"/>
+        <rect x="160" y="48" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="12" y="54" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="60" y="54" width="50" height="2.5" rx="1" fill="#eee"/>
+        <rect x="110" y="54" width="20" height="2.5" rx="1" fill="#F5E4DF"/>
+        <rect x="160" y="54" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="12" y="60" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="60" y="60" width="40" height="2.5" rx="1" fill="#eee"/>
+        <rect x="110" y="60" width="20" height="2.5" rx="1" fill="#DFF0D4"/>
+        <rect x="160" y="60" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="12" y="66" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="60" y="66" width="34" height="2.5" rx="1" fill="#eee"/>
+        <rect x="110" y="66" width="20" height="2.5" rx="1" fill="#DFF0D4"/>
+        <rect x="160" y="66" width="24" height="2.5" rx="1" fill="#eee"/>
+        <rect x="12" y="78" width="60" height="20" rx="3" fill="#F0F0EC" stroke="#eee" stroke-width="0.5"/>
+        <rect x="18" y="83" width="28" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="18" y="89" width="40" height="5" rx="2" fill="#1A1A1A"/>
+        <rect x="84" y="78" width="108" height="20" rx="3" fill="#F0F0EC" stroke="#eee" stroke-width="0.5"/>
+        <rect x="90" y="82" width="20" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="90" y="88" width="16" height="6" rx="3" fill="#DFF0D4" stroke="#4E6B38" stroke-width="0.5"/>
+        <rect x="110" y="88" width="16" height="6" rx="3" fill="#DFF0D4" stroke="#4E6B38" stroke-width="0.5"/>
+        <rect x="130" y="88" width="16" height="6" rx="3" fill="#F5E4DF" stroke="#C8614A" stroke-width="0.5"/>
+        <rect x="150" y="88" width="16" height="6" rx="3" fill="#DFF0D4" stroke="#4E6B38" stroke-width="0.5"/>
+        <rect x="170" y="88" width="16" height="6" rx="3" fill="#DFF0D4" stroke="#4E6B38" stroke-width="0.5"/>
+      </svg>`,
+
+      booking_app: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="110" fill="#F8F7F4"/>
+        <rect x="60" y="0" width="80" height="110" rx="8" fill="#fff" stroke="#e5e5e5" stroke-width="1"/>
+        <rect x="60" y="0" width="80" height="16" rx="8" fill="#1A1A1A"/>
+        <rect x="60" y="8" width="80" height="8" fill="#1A1A1A"/>
+        <rect x="82" y="4" width="36" height="4" rx="2" fill="#333"/>
+        <rect x="66" y="20" width="28" height="3" rx="1.5" fill="#C8614A" opacity="0.5"/>
+        <rect x="66" y="26" width="52" height="5" rx="2" fill="#1A1A1A" opacity="0.08"/>
+        <rect x="66" y="34" width="68" height="20" rx="4" fill="#F5E4DF"/>
+        <rect x="70" y="38" width="30" height="3" rx="1.5" fill="#C8614A"/>
+        <rect x="70" y="44" width="20" height="2.5" rx="1" fill="#C8614A" opacity="0.5"/>
+        <rect x="106" y="34" width="20" height="20" rx="4" fill="#C8614A" opacity="0.15"/>
+        <rect x="66" y="58" width="68" height="20" rx="4" fill="#F0F0EC"/>
+        <rect x="70" y="62" width="40" height="3" rx="1.5" fill="#555"/>
+        <rect x="70" y="68" width="26" height="2.5" rx="1" fill="#aaa"/>
+        <rect x="106" y="58" width="20" height="20" rx="4" fill="#eee"/>
+        <rect x="66" y="82" width="68" height="10" rx="3" fill="#C8614A"/>
+        <rect x="78" y="85" width="44" height="3" rx="1.5" fill="rgba(255,255,255,0.7)"/>
+        <rect x="66" y="96" width="68" height="1" rx="0.5" fill="#eee"/>
+        <circle cx="100" cy="104" r="3" fill="#ddd"/>
+      </svg>`,
+
+      operator_portal: `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="110" fill="#F0F0EC"/>
+        <rect x="0" y="0" width="200" height="20" fill="#2A6B7C"/>
+        <rect x="8" y="7" width="40" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+        <rect x="100" y="7" width="20" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
+        <rect x="124" y="7" width="20" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
+        <rect x="148" y="7" width="20" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="186" cy="10" r="5" fill="rgba(255,255,255,0.2)"/>
+        <rect x="6" y="26" width="90" height="36" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="12" y="32" width="40" height="3" rx="1.5" fill="#D8EDF2"/>
+        <rect x="12" y="39" width="18" height="10" rx="2" fill="#2A6B7C" opacity="0.2"/>
+        <rect x="34" y="39" width="18" height="10" rx="2" fill="#2A6B7C" opacity="0.4"/>
+        <rect x="56" y="39" width="18" height="10" rx="2" fill="#2A6B7C" opacity="0.7"/>
+        <rect x="78" y="39" width="12" height="10" rx="2" fill="#2A6B7C"/>
+        <rect x="12" y="52" width="78" height="2.5" rx="1" fill="#eee"/>
+        <rect x="104" y="26" width="90" height="36" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="110" y="32" width="36" height="3" rx="1.5" fill="#D8EDF2"/>
+        <rect x="110" y="40" width="78" height="8" rx="2" fill="#F0F0EC"/>
+        <rect x="110" y="50" width="78" height="8" rx="2" fill="#F0F0EC"/>
+        <rect x="6" y="68" width="188" height="36" rx="4" fill="#fff" stroke="#e5e5e5" stroke-width="0.5"/>
+        <rect x="12" y="74" width="40" height="3" rx="1.5" fill="#D8EDF2"/>
+        <rect x="12" y="80" width="24" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="70" y="80" width="24" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="128" y="80" width="24" height="3" rx="1.5" fill="#ddd"/>
+        <rect x="12" y="86" width="34" height="4" rx="2" fill="#DFF0D4"/>
+        <rect x="70" y="86" width="34" height="4" rx="2" fill="#F5E4DF"/>
+        <rect x="128" y="86" width="34" height="4" rx="2" fill="#DFF0D4"/>
+        <rect x="12" y="93" width="28" height="2.5" rx="1" fill="#eee"/>
+        <rect x="70" y="93" width="28" height="2.5" rx="1" fill="#eee"/>
+        <rect x="128" y="93" width="28" height="2.5" rx="1" fill="#eee"/>
+      </svg>`,
+    };
+
+    const systemsData = {
+      internal: [
+        { id: 'erp', name: 'Business Dashboard', badge: 'internal', badgeLabel: 'Internal', desc: 'Revenue, bookings, payouts, and business KPIs in one place. Frederica\'s command centre.', access: 'Frederica & finance team only' },
+        { id: 'crm', name: 'Operator CRM', badge: 'internal', badgeLabel: 'Internal', desc: 'All tour operators, their contracts, performance scores, payout history, and communications.', access: 'Operations team' },
+        { id: 'observability', name: 'Observability System', badge: 'restricted', badgeLabel: 'Engineering', desc: 'Real-time error tracking, API latency, uptime monitoring, and system health logs.', access: 'Engineering team only' },
+        { id: 'compliance', name: 'Compliance Dashboard', badge: 'restricted', badgeLabel: 'Restricted', desc: 'GDPR checklists, DPA status, data subject requests, consent records, and audit trails.', access: 'Frederica & DPO only' },
+        { id: 'engineering', name: 'Engineering Workspace', badge: 'restricted', badgeLabel: 'Engineering', desc: 'Codebase, CI/CD pipelines, deployment logs, test coverage, and infrastructure config.', access: 'Engineering team only' },
+        { id: 'audit', name: 'Audit & Reporting', badge: 'internal', badgeLabel: 'Internal', desc: 'Financial reports, booking history, operator performance reviews, and compliance exports.', access: 'Frederica & management' },
+      ],
+      external: [
+        { id: 'booking_app', name: 'Trip Booking App', badge: 'external', badgeLabel: 'Public', desc: 'The traveller-facing iOS & Android app and web platform. Search, discover, book, review.', access: 'All travellers' },
+        { id: 'operator_portal', name: 'Operator Portal', badge: 'external', badgeLabel: 'Partners', desc: 'Where tour operators manage listings, availability, pricing, and incoming bookings.', access: 'Verified operators only' },
+      ],
+    };
+
+    function buildSysGrid(key) {
+      const container = document.getElementById('sys-grid-' + key);
+      if (!container || container.dataset.built) return;
+      container.dataset.built = '1';
+      container.innerHTML = systemsData[key].map(s => `
+        <div class="sys-card ${key}-card">
+          <div class="sys-mockup">${mockups[s.id] || ''}</div>
+          <div class="sys-info">
+            <div class="sys-badge ${s.badge}">${s.badgeLabel}</div>
+            <div class="sys-name">${s.name}</div>
+            <div class="sys-desc">${s.desc}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    buildSysGrid('internal');
+    buildSysGrid('external');
 
     // ── MAU STRATEGY ──
     const mauData = [
