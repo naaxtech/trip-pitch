@@ -259,27 +259,67 @@
     }
     .panel-header-text p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-    /* ── CHIPS ── */
+    /* ── EXPANDABLE CHIPS ── */
     .chips-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 8px;
     }
 
     .chip {
-      display: flex;
-      align-items: center;
-      gap: 10px;
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 10px 14px;
+      padding: 12px 14px;
       font-size: 13px;
       color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      user-select: none;
     }
-    .chip.product svg { stroke: var(--terra); }
-    .chip.engine  svg { stroke: var(--ocean); }
-    .chip.growth  svg { stroke: var(--olive); }
+    .chip:hover { border-color: var(--border-med); }
+    .chip.product:hover { border-color: var(--terra); }
+    .chip.engine:hover  { border-color: var(--ocean); }
+    .chip.growth:hover  { border-color: var(--olive); }
+
+    .chip.open.product { border-color: var(--terra); background: var(--card); }
+    .chip.open.engine  { border-color: var(--ocean); background: var(--card); }
+    .chip.open.growth  { border-color: var(--olive); background: var(--card); }
+
+    .chip-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .chip-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chip-arrow {
+      flex-shrink: 0;
+      transition: transform 0.2s;
+      opacity: 0.35;
+    }
+    .chip.open .chip-arrow { transform: rotate(90deg); opacity: 0.7; }
+
+    .chip.product .chip-left svg { stroke: var(--terra); }
+    .chip.engine  .chip-left svg { stroke: var(--ocean); }
+    .chip.growth  .chip-left svg { stroke: var(--olive); }
+
+    .chip-detail {
+      display: none;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .chip.open .chip-detail { display: block; }
 
     /* ── MAU STRATEGY ── */
     .mau-progress {
@@ -595,32 +635,7 @@
             <p>What your users open. What they search, book, review, and return to. Built, monitored, and continuously improved by a dedicated tech team responding to how real people behave.</p>
           </div>
         </div>
-        <div class="chips-grid">
-          <div class="chip product">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
-            Booking &amp; discovery flow
-          </div>
-          <div class="chip product">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
-            User behavior tracking
-          </div>
-          <div class="chip product">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg></span>
-            Bug fixing &amp; uptime
-          </div>
-          <div class="chip product">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17h7m-3.5-3.5v7"/></svg></span>
-            Feature roadmap
-          </div>
-          <div class="chip product">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></span>
-            iOS &amp; Android apps
-          </div>
-          <div class="chip product">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-            Payments &amp; security
-          </div>
-        </div>
+        <div class="chips-grid" id="chips-product"></div>
       </div>
     </div>
 
@@ -636,32 +651,7 @@
             <p>Everything that keeps your company running behind the scenes — vendors, finance, HR, contracts. All of it connected to the product so you make decisions based on real numbers, not gut feel.</p>
           </div>
         </div>
-        <div class="chips-grid">
-          <div class="chip engine">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
-            Vendor &amp; operator CRM
-          </div>
-          <div class="chip engine">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
-            Revenue dashboards
-          </div>
-          <div class="chip engine">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
-            HR &amp; team management
-          </div>
-          <div class="chip engine">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></span>
-            ERP &amp; internal workflows
-          </div>
-          <div class="chip engine">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
-            Contracts &amp; compliance
-          </div>
-          <div class="chip engine">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-            Supplier onboarding
-          </div>
-        </div>
+        <div class="chips-grid" id="chips-engine"></div>
       </div>
     </div>
 
@@ -677,32 +667,7 @@
             <p>Marketing can't grow what tech hasn't built. The pipelines, funnels, and automations that turn strangers into customers — and customers into repeat ones — are built by engineers, not marketers.</p>
           </div>
         </div>
-        <div class="chips-grid">
-          <div class="chip growth">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-            SEO infrastructure
-          </div>
-          <div class="chip growth">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-            Email &amp; push automation
-          </div>
-          <div class="chip growth">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></span>
-            Conversion funnels
-          </div>
-          <div class="chip growth">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
-            Analytics &amp; attribution
-          </div>
-          <div class="chip growth">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span>
-            Retargeting pipelines
-          </div>
-          <div class="chip growth">
-            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-            Reviews &amp; social proof
-          </div>
-        </div>
+        <div class="chips-grid" id="chips-growth"></div>
       </div>
     </div>
 
@@ -850,6 +815,177 @@
       document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
       document.getElementById('panel-' + key).classList.add('active');
     }
+
+    // ── CHIP DATA ──
+    const SVG = {
+      pin:      `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>`,
+      activity: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+      tool:     `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>`,
+      list:     `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
+      phone:    `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>`,
+      shield:   `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+      star:     `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+      settings: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>`,
+      bell:     `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>`,
+      users:    `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>`,
+      dollar:   `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+      repeat:   `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>`,
+      file:     `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+      store:    `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+      search:   `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+      mail:     `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
+      funnel:   `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>`,
+      bar:      `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+      refresh:  `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>`,
+      globe:    `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>`,
+      lock:     `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>`,
+    };
+
+    const arrow = `<svg class="chip-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`;
+
+    const chipData = {
+      product: [
+        {
+          icon: 'pin', label: 'Booking & discovery flow',
+          detail: 'The core of the platform. Users search by destination, date, and activity type. Results are ranked by relevance, availability, and ratings. A fast, intuitive discovery experience directly determines whether a visitor converts into a paying customer.'
+        },
+        {
+          icon: 'activity', label: 'User behavior tracking',
+          detail: 'Every tap, scroll, and drop-off is recorded. The tech team analyses where users abandon the booking flow, which filters get used most, and which tour types get browsed but not booked — then uses that data to improve the product each sprint.'
+        },
+        {
+          icon: 'tool', label: 'Bug fixing & uptime',
+          detail: 'Bugs in a booking platform directly cost revenue. A broken payment step or a crashing search page means lost bookings. The team monitors errors in real time (via tools like Sentry) and maintains 99.9%+ uptime with automated alerts.'
+        },
+        {
+          icon: 'list', label: 'Feature roadmap',
+          detail: 'New features are prioritised by user impact, revenue potential, and engineering effort. The roadmap is a living document — informed by user feedback, operator requests, analytics data, and market trends like competitor features.'
+        },
+        {
+          icon: 'phone', label: 'iOS & Android apps',
+          detail: 'Native mobile apps built in React Native for a consistent experience on both platforms. Covers offline access, push notifications, location-based discovery, and fast checkout — essential for travellers on the go.'
+        },
+        {
+          icon: 'shield', label: 'Payments & security',
+          detail: 'Payment processing via Stripe with support for cards, Apple Pay, and Google Pay. All transactions are encrypted, PCI-compliant, and protected against fraud. Refund and dispute flows are automated.'
+        },
+        {
+          icon: 'star', label: 'Reviews & ratings system',
+          detail: 'Verified post-trip reviews tied to completed bookings only — preventing fake reviews. Ratings influence search ranking. Operators are notified of new reviews and can respond publicly. High-quality review data builds trust and drives conversions.'
+        },
+        {
+          icon: 'settings', label: 'Operator portal',
+          detail: 'A separate dashboard where tour operators manage their listings, availability, pricing, photos, and booking calendar. They receive real-time notifications for new bookings, cancellations, and messages from travellers.'
+        },
+        {
+          icon: 'bell', label: 'Notifications & reminders',
+          detail: 'Automated emails and push notifications for booking confirmations, pre-trip reminders, post-trip review requests, and promotional offers. Each touchpoint is triggered by booking state and timed for maximum relevance.'
+        },
+        {
+          icon: 'globe', label: 'Multilingual & multi-currency',
+          detail: 'Support for Italian, English, and other key traveller languages. Prices displayed in the user\'s local currency with live exchange rates. Critical for a Calabrian platform serving international visitors.'
+        },
+      ],
+      engine: [
+        {
+          icon: 'file', label: 'Vendor & operator CRM',
+          detail: 'A centralised database of all tour operators, their contracts, performance scores, payout history, and communication logs. When an operator has repeated cancellations or low ratings, the system flags it automatically.'
+        },
+        {
+          icon: 'dollar', label: 'Revenue dashboards',
+          detail: 'Real-time view of bookings, revenue, commissions, and refunds. Broken down by operator, activity type, region, and time period. Frederica can see exactly which parts of the business are growing and which are underperforming — without opening a spreadsheet.'
+        },
+        {
+          icon: 'users', label: 'HR & team management',
+          detail: 'As the team grows, this covers contracts, onboarding checklists, role permissions, and payroll integrations. Ensures every new hire has the right system access from day one and that offboarding is clean and auditable.'
+        },
+        {
+          icon: 'repeat', label: 'ERP & internal workflows',
+          detail: 'Enterprise Resource Planning connects all internal operations — finance, procurement, operator management, and customer support — into one system. Eliminates manual handoffs and gives a single source of truth for the business.'
+        },
+        {
+          icon: 'file', label: 'Contracts & compliance',
+          detail: 'Digital contract management for operator agreements, DPAs, and insurance documents. Tracks renewal dates, flags expiring contracts, and stores signed versions securely. Reduces legal exposure from outdated or missing agreements.'
+        },
+        {
+          icon: 'store', label: 'Supplier onboarding',
+          detail: 'A structured onboarding flow for new operators — identity verification, licence checks, bank detail collection, contract signing, and listing setup. Automated where possible to reduce manual work and ensure consistency.'
+        },
+        {
+          icon: 'dollar', label: 'Payout & commission engine',
+          detail: 'Automatically calculates operator payouts after each booking cycle, deducting the platform commission. Generates payout reports, handles currency conversion, and integrates with accounting software for reconciliation.'
+        },
+        {
+          icon: 'shield', label: 'Finance & accounting integration',
+          detail: 'Connects to accounting tools (e.g. QuickBooks, Xero, or Italian-specific platforms) to automate invoicing, VAT calculations, and financial reporting. Ensures compliance with Italian fiscal requirements including electronic invoicing (fatturazione elettronica).'
+        },
+      ],
+      growth: [
+        {
+          icon: 'search', label: 'SEO infrastructure',
+          detail: 'Every destination page, activity listing, and category is structured for search engine discoverability. This includes semantic HTML, structured data (schema.org), sitemap generation, page speed optimisation, and a content architecture designed around high-intent travel search queries.'
+        },
+        {
+          icon: 'mail', label: 'Email & push automation',
+          detail: 'Triggered communication sequences based on user actions — booking confirmation, pre-trip reminder, post-trip review request, re-engagement after 30 days of inactivity. Each message is personalised using booking history and preferences.'
+        },
+        {
+          icon: 'funnel', label: 'Conversion funnels',
+          detail: 'The path from landing page to completed booking is engineered deliberately. A/B tests on search results layouts, pricing display, and checkout steps are run continuously. Even a 5% improvement in checkout conversion rate compounds significantly at scale.'
+        },
+        {
+          icon: 'bar', label: 'Analytics & attribution',
+          detail: 'Tracks where every booking originated — organic search, paid ad, referral, direct — and which channel produces the highest-value customers. This tells Frederica exactly where to invest marketing budget and what is actually working.'
+        },
+        {
+          icon: 'refresh', label: 'Retargeting pipelines',
+          detail: 'Users who browsed but did not book are retargeted with relevant ads on Meta and Google. Audiences are built from platform behaviour data. Retargeting typically converts at 3–5x the rate of cold traffic, making it one of the highest-ROI growth channels.'
+        },
+        {
+          icon: 'star', label: 'Reviews & social proof',
+          detail: 'Verified reviews are surfaced prominently in search results and listing pages. High-rated experiences are automatically featured. Review content is also indexed by search engines, contributing to long-tail SEO for specific activities and destinations.'
+        },
+        {
+          icon: 'users', label: 'Referral & loyalty system',
+          detail: 'Users who refer friends or rebook receive credits or discounts. Loyalty tiers reward repeat travellers with early access to new experiences or exclusive pricing. These systems drive organic growth at near-zero acquisition cost.'
+        },
+        {
+          icon: 'globe', label: 'Partnership & affiliate tracking',
+          detail: 'Hotels, airlines, and travel blogs can embed booking widgets or referral links. The platform tracks conversions attributed to each partner and automates commission payouts. Expands distribution without paid advertising spend.'
+        },
+      ],
+    };
+
+    function buildChips(panelKey) {
+      const container = document.getElementById('chips-' + panelKey);
+      if (!container || container.dataset.built) return;
+      container.dataset.built = '1';
+      const items = chipData[panelKey];
+      container.innerHTML = items.map((item, i) => `
+        <div class="chip ${panelKey}" onclick="toggleChip(this)" data-idx="${i}">
+          <div class="chip-top">
+            <div class="chip-left">
+              <span class="icon">${SVG[item.icon]}</span>
+              <span>${item.label}</span>
+            </div>
+            ${arrow}
+          </div>
+          <div class="chip-detail">${item.detail}</div>
+        </div>
+      `).join('');
+    }
+
+    function toggleChip(el) {
+      const isOpen = el.classList.contains('open');
+      // close all chips in same grid
+      el.closest('.chips-grid').querySelectorAll('.chip.open').forEach(c => c.classList.remove('open'));
+      if (!isOpen) el.classList.add('open');
+    }
+
+    // build all three on init so switching tabs is instant
+    buildChips('product');
+    buildChips('engine');
+    buildChips('growth');
 
     // ── MAU STRATEGY ──
     const mauData = [
